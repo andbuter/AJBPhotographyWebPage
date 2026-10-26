@@ -88,6 +88,7 @@ let isAdmin = false;
 async function saveDb() {
   const res  = await fetch('/api/db', {
     method:  'POST',
+    // headers: { 'Content-Type': 'application/json' },
     headers: { 'Content-Type': 'application/json' },
     body:    JSON.stringify(db)
   });
