@@ -89,7 +89,7 @@ async function saveDb() {
   const res  = await fetch('/api/db', {
     method:  'POST',
     // headers: { 'Content-Type': 'application/json' },
-    headers: { 'Content-Type': 'application/json' },
+    headers: { 'Content-Type': 'text/plain' },
     body:    JSON.stringify(db)
   });
   const data = await res.json();
