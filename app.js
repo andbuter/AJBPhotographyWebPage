@@ -107,6 +107,24 @@ async function loadDb() {
 }
 
 // -----------------------------------------------------------------------------
+// CONTACT FORM
+// -----------------------------------------------------------------------------
+document.getElementById('contactForm').addEventListener('submit', async (e) =>  {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    try {
+        const response = await fetch('contact.php', {
+            method: 'POST',
+            body: formData
+        });
+        const result = await response.text();
+        showToast( result );
+    } catch(error) {
+        showToast( "Error sending email. Please try again later." );
+    }
+});
+
+// -----------------------------------------------------------------------------
 // NAVIGATION BAR
 // -----------------------------------------------------------------------------
 

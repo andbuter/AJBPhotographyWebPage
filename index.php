@@ -327,31 +327,33 @@
         </div>
 
         <!-- Contact form — currently triggers a toast on submit (no backend email handler) -->
-        <!-- TODO: Wire up to an email sending service (e.g. Resend, Formspree, Nodemailer) -->
         <div class="contact-form">
+          <form action="contact.php" method="POST" id="contactForm">
           <div class="form-row">
             <div class="form-group">
               <label class="form-label">First Name</label>
-              <input type="text" class="form-input" placeholder="Jane">
+              <input type="text" class="form-input" placeholder="Jane" id="firstname" name="firstname">
             </div>
             <div class="form-group">
               <label class="form-label">Last Name</label>
-              <input type="text" class="form-input" placeholder="Doe">
+              <input type="text" class="form-input" placeholder="Doe" id="lastname" name="lastname">
             </div>
           </div>
           <div class="form-group">
             <label class="form-label">Email</label>
-            <input type="email" class="form-input" placeholder="you@example.com">
+            <input type="email" class="form-input" placeholder="you@example.com" id="email" name="email">
           </div>
           <div class="form-group">
             <label class="form-label">Subject</label>
-            <input type="text" class="form-input" placeholder="Booking inquiry…">
+            <input type="text" class="form-input" placeholder="Booking inquiry…" id="subject" name="subject">
           </div>
           <div class="form-group">
             <label class="form-label">Message</label>
-            <textarea class="form-textarea" placeholder="Tell me about your project…"></textarea>
+            <textarea class="form-textarea" placeholder="Tell me about your project…" id="message" name="message"></textarea>
           </div>
-          <button class="btn-primary" onclick="showToast('Message sent! Aiden will be in touch soon.')">Send Message</button>
+          <!-- TODO: Wire up to an email sending service (e.g. Resend, Formspree, Nodemailer) -->
+          <button class="btn-primary" type="submit" id="submit" name="submit">Send Message</button>
+	  </form>
         </div>
 
       </div>
